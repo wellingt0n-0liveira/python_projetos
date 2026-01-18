@@ -16,6 +16,7 @@ elif operador == '*':
     resultado = numero1 * numero2
 #elif operador == '/':
  #   resultado = numero1 / numero2
+ # Agora sua calculadora não quebra quando o usuário coloca zero no divisor.
 elif operador == "/":
     if numero2 == 0:
         print("Erro: divisão por zero não é permitida.")
