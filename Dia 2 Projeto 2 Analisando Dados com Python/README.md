@@ -1,31 +1,30 @@
 # Dia 2 – Projeto 2: Analisando Dados com Python
 
-Este projeto realiza uma análise de dados em Python usando bibliotecas especializadas, com foco em importar, tratar e extrair insights a partir de uma base de dados (como vendas, clientes ou produtos).
+Este projeto realiza uma análise de dados em Python a partir da base `cancelamento.csv`, com foco em entender padrões e indicadores que podem estar relacionados a cancelamentos (churn) de clientes.
 
 ## Objetivo do projeto
 
 - Praticar leitura e tratamento de dados com `pandas`.
-- Explorar métricas básicas (soma, média, contagem, agrupamentos).
-- Gerar análises que possam apoiar decisões de negócio (por exemplo, identificar produtos mais vendidos ou clientes mais valiosos).
+- Explorar métricas e insights em cima da base de cancelamentos.
+- Utilizar um notebook Jupyter para documentar e visualizar a análise passo a passo.
 
 ## Tecnologias utilizadas
 
 - Python 3
 - pandas
-- (Opcional) Jupyter Notebook para análise interativa
+- Jupyter Notebook
 - (Opcional) matplotlib / seaborn para gráficos
 
 ## Estrutura do projeto
 
 ```text
 Dia 2 Projeto 2 Analisando Dados com Python/
-├── analise_dados.py         # Script principal com a análise de dados
-├── dados/                   # Pasta com a base de dados (CSV/Excel)
-│   └── base_exemplo.csv     # Arquivo de dados utilizado na análise
-├── notebooks/               # (Opcional) Notebooks Jupyter com a análise passo a passo
-│   └── analise_dados.ipynb
-└── README.md                # Documentação deste projeto
-Ajuste os nomes de arquivos/pastas conforme o que você realmente tiver no diretório.
+├── cancelamento.csv        # Base de dados utilizada na análise
+├── inicial.ipynb           # Notebook Jupyter com a análise passo a passo
+└── README.md               # Documentação deste projeto
+cancelamento.csv: arquivo com os dados de clientes/cancelamentos que serão analisados.
+
+inicial.ipynb: notebook onde a análise é desenvolvida, executada e comentada célula a célula.
 
 Como executar a análise
 Clonar o repositório (se ainda não clonou):
@@ -40,71 +39,72 @@ python -m venv .venv
 source .venv/bin/activate   # Linux/macOS
 # ou
 .venv\Scripts\activate      # Windows
-Instalar dependências:
+Instalar dependências principais:
 
 bash
-pip install pandas matplotlib seaborn
-Garantir que o arquivo de dados (por exemplo, dados/base_exemplo.csv) está no caminho esperado pelo script.
-
-Executar o script de análise:
-
-bash
-python analise_dados.py
-# ou
-python3 analise_dados.py
-Se estiver usando Jupyter:
+pip install pandas jupyter matplotlib seaborn
+Iniciar o Jupyter Notebook:
 
 bash
 jupyter notebook
-# abrir o arquivo notebooks/analise_dados.ipynb e executar as células em ordem
-O que a análise faz
-A estrutura típica desse tipo de projeto inclui: [web:19][web:20][web:25]
+No navegador, abrir o arquivo inicial.ipynb e executar as células em ordem (Kernel → Restart & Run All, ou rodando uma a uma).
 
-Importar a base de dados com pandas.read_csv ou read_excel.
+O que a análise faz (estrutura típica)
+A análise em inicial.ipynb geralmente segue um fluxo como: [web:19][web:20][web:24]
 
-Fazer uma visão geral dos dados (quantidade de linhas/colunas, tipos, nulos).
+Importar bibliotecas (pandas, etc.).
 
-Tratar dados se necessário (valores ausentes, tipos incorretos, duplicidades).
+Carregar o arquivo cancelamento.csv em um DataFrame.
 
-Calcular indicadores importantes, como:
+Fazer uma visão geral dos dados:
 
-Total de vendas por produto, cliente ou categoria.
+Quantidade de linhas e colunas.
 
-Ticket médio, quantidade média, etc.
+Tipos de dados.
 
-Top N itens (por exemplo, produtos mais vendidos).
+Valores faltantes.
 
-Gerar tabelas/resumos e, opcionalmente, gráficos simples.
+Tratar dados, se necessário (nulos, tipos, duplicidades).
 
-Adapte esta seção para refletir exatamente quais análises o seu código implementa.
+Calcular métricas relevantes, por exemplo:
+
+Quantidade total de clientes.
+
+Taxa de cancelamento.
+
+Cancelamento por categoria (plano, região, tempo de casa, etc.).
+
+(Opcional) Gerar gráficos para visualizar padrões e comparações.
+
+Adapte esta seção conforme o que o seu notebook realmente calcula e exibe.
 
 Exemplo de resultados
-Exemplos de saídas esperadas (você pode colar prints ou resumos reais depois):
+Alguns exemplos de saídas que podem ser obtidas e descritas no notebook:
 
-Tabela com os produtos mais vendidos.
+Tabela com a taxa de cancelamento por tipo de plano.
 
-Tabela com o faturamento total por categoria.
+Gráfico de barras com a quantidade de clientes ativos x cancelados.
 
-Gráfico de barras mostrando as vendas por mês ou categoria.
+Métricas resumo, como:
 
 text
-Top 5 produtos por faturamento:
-1. Produto A – R$ 10.000
-2. Produto B – R$ 8.500
-3. Produto C – R$ 7.200
-...
+Total de clientes: 1.000
+Clientes cancelados: 230
+Taxa de cancelamento: 23%
+Você pode complementar este README depois com prints dos gráficos ou seções do notebook.
+
 Aprendizados e pontos de destaque
-Uso de pandas para carregar, filtrar, agrupar e sumarizar dados. [web:19][web:20]
+Uso de pandas para carregar, explorar e transformar dados de um CSV real. [web:19][web:20]
 
-Introdução a análise exploratória de dados (EDA), entendendo o comportamento da base. [web:19][web:24][web:25]
+Prática de análise exploratória de dados (EDA) em inicial.ipynb, com visualização incremental dos resultados. [web:19][web:24]
 
-Possível integração com visualização (matplotlib/seaborn) para criar gráficos. [web:19][web:20]
+Organização da análise em um notebook, que é um formato comum em projetos de dados e muito usado em portfólio. [web:25]
 
 Possíveis melhorias futuras
-Organizar o código em funções reutilizáveis (por exemplo, carregar_dados, tratar_dados, gerar_relatorios).
+Refatorar partes da análise em funções reutilizáveis (por exemplo, funções para cálculo de métricas e geração de gráficos).
 
-Adicionar gráficos mais elaborados (histogramas, boxplots, séries temporais).
+Criar mais visualizações (distribuições, comparações por grupo, séries temporais se houver datas).
 
-Exportar os resultados para um novo CSV, Excel ou relatório em PDF.
+Exportar resultados consolidados para um arquivo (CSV/Excel ou relatório).
 
-Integrar com uma camada de automação (por exemplo, rodar periodicamente para gerar relatórios atualizados).
+Conectar essa análise a uma automação (por exemplo, rodar periodicamente e gerar relatórios atualizados).
