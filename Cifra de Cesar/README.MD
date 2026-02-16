@@ -86,4 +86,4 @@ Implementação de um algoritmo clássico de criptografia por substituição.
 
 Manipulação de caracteres, uso de funções e boas práticas básicas de Python.
 
-No contexto de segurança, ilustra como técnicas antigas de cifra funcionam e por que não são adequadas para uso real em produção, mas úteis para estudo de fundamentos.
+No contexto de segurança, ilustra como técnicas antigas de cifra funcionam e por que não são adequadas para uso real em produção, mas úteis para estudo de fundamentos
