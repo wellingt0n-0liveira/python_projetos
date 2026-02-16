@@ -1,4 +1,4 @@
-# Gerador de resultados – Pedra, Papel e Tesoura
+# Gerador de Resultados – Pedra, Papel e Tesoura
 
 Este projeto implementa um gerador de resultados para o jogo Pedra, Papel e Tesoura em Python, permitindo simular partidas de forma simples via linha de comando.
 
